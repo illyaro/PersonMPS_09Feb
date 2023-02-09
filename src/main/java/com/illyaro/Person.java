@@ -20,6 +20,18 @@ public class Person {
      * @param gender the gender of the person
      */
     public Person(String name, int age, String gender){
+        if (name == null) {
+            throw new PersonException("Persons name cannot be null");
+        }
+        if(name.isEmpty()) {
+            throw new PersonException("Persons name cannot be empty");
+        }
+        if(age < 0) {
+            throw new PersonException("Persons age cannot be negative");
+        }
+        if( !(gender.equals("Male") || gender.equals("Female")) ){
+            throw new PersonException("Inserted gender was: '" + gender + "'. Only 'Male' or 'Female' gender is accdepted");
+        }
         this.name = name;
         this.age = age;
         this.gender = gender;
