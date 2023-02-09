@@ -1,5 +1,6 @@
 package com.illyaro;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -65,9 +66,37 @@ public class Person {
         if(persons == null){
             throw new PersonException("Persons list cannot be null");
         }
-        if(persons.isEmpty()){
-            return new double[]{-1, -1};
+        List<List<Person>> byGender = classifyByGender(persons);
+        double[] result = new double[2];
+        result[0] = averageAge(byGender.get(0));
+        result[1] = averageAge(byGender.get(1));
+        return result;
+    }
+
+    private List<List<Person>> classifyByGender(List<Person> persons) {
+        List<List<Person>> result = new ArrayList<>();
+        result.add(new ArrayList<>());
+        result.add(new ArrayList<>());
+        for(Person p : persons){
+            if(p.gender.equals("Male")){
+                result.get(0).add(p);
+            } else {
+                result.get(1).add(p);
+            }
         }
-        return null;
+        return result;
+    }
+
+    private double averageAge(List<Person> persons) {
+        double result = 0;
+        if(persons.isEmpty()){
+            result = -1;
+        } else{
+            for(Person p : persons){
+                result += p.age;
+            }
+            result /= persons.size();
+        }
+        return result;
     }
 }
