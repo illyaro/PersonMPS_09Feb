@@ -5,7 +5,4 @@ public class PersonException extends RuntimeException{
         super(message);
     }
 
-    public PersonException(){
-        super();
-    }
 }
