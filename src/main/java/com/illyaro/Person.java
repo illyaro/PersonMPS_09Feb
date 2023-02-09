@@ -58,6 +58,8 @@ public class Person {
      *
      * @param persons the list of persons to compute the average age from
      * @return an array of two elements, first is the male mean age and the second one is the female mean age
+     *
+     * @throws PersonException in case the persons list is null
      */
     public double[] averageAgePerGender(List<Person> persons){
         return null;
