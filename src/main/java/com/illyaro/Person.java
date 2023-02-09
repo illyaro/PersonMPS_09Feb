@@ -30,7 +30,7 @@ public class Person {
             throw new PersonException("Persons age cannot be negative");
         }
         if( !(gender.equals("Male") || gender.equals("Female")) ){
-            throw new PersonException("Inserted gender was: '" + gender + "'. Only 'Male' or 'Female' gender is accdepted");
+            throw new PersonException("Inserted gender was: '" + gender + "'. Only 'Male' or 'Female' gender is accepted");
         }
         this.name = name;
         this.age = age;

@@ -61,6 +61,6 @@ class PersonTest {
         int age = 12;
         String otherGender = "Other";
         assertThrows(PersonException.class, () -> new Person(name, age, otherGender),
-                "Inserted gender was: '" + otherGender + "'. Only 'Male' or 'Female' gender is accdepted");
+                "Inserted gender was: '" + otherGender + "'. Only 'Male' or 'Female' gender is accepted");
     }
 }
