@@ -62,6 +62,12 @@ public class Person {
      * @throws PersonException in case the persons list is null
      */
     public double[] averageAgePerGender(List<Person> persons){
+        if(persons == null){
+            throw new PersonException("Persons list cannot be null");
+        }
+        if(persons.isEmpty()){
+            return new double[]{-1, -1};
+        }
         return null;
     }
 }
