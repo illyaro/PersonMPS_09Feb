@@ -106,7 +106,7 @@ class PersonTest {
         Person thirdPerson = new Person("John", 60, "Male");
         List<Person> persons = List.of(testPerson, secondPerson, thirdPerson);
 
-        double expectedMeanAge = (testPerson.age() + secondPerson.age() + thirdPerson.age())/persons.size();
+        double expectedMeanAge = (testPerson.age() + secondPerson.age() + thirdPerson.age())/(double) persons.size();
         double[] expected = {expectedMeanAge, -1};
 
         assertArrayEquals(expected, testPerson.averageAgePerGender(persons));
@@ -119,7 +119,7 @@ class PersonTest {
         Person thirdPerson = new Person("Angela", 60, "Female");
         List<Person> persons = List.of(firstPerson, secondPerson, thirdPerson);
 
-        double expectedMeanAge = (firstPerson.age() + secondPerson.age() + thirdPerson.age())/persons.size();
+        double expectedMeanAge = (firstPerson.age() + secondPerson.age() + thirdPerson.age())/(double) persons.size();
         double[] expected = {-1, expectedMeanAge};
 
         assertArrayEquals(expected, testPerson.averageAgePerGender(persons));
@@ -128,14 +128,14 @@ class PersonTest {
     @Test
     void ListWithMalesAndFemalesReturnAnArrayWithBothNotNegativeElements(){
         Person secondMale = new Person("Peter", 24, "Male");
-        Person thirdMale = new Person("John", 5, "Male");
+        Person thirdMale = new Person("John", 6, "Male");
 
         Person firstFemale = new Person("Anita", 78, "Female");
         Person secondFemale = new Person("Sarah", 36, "Female");
         Person thirdFemale = new Person("Angela", 64, "Female");
 
-        double expectedMeanAgeMale = (testPerson.age() + secondMale.age() + thirdMale.age())/3;
-        double expectedMeanAgeFemale = (firstFemale.age() + secondFemale.age() + thirdFemale.age())/3;
+        double expectedMeanAgeMale = (testPerson.age() + secondMale.age() + thirdMale.age())/3.0;
+        double expectedMeanAgeFemale = (firstFemale.age() + secondFemale.age() + thirdFemale.age())/3.0;
         double[] expected = {expectedMeanAgeMale, expectedMeanAgeFemale};
 
         List<Person> persons = new ArrayList<>();
