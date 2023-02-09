@@ -15,6 +15,8 @@ public class Person {
     /**
      * Constructs a person with a name, age and gender.
      *
+     * @throws PersonException in case any of the following conditions are met: name is null or empty, negative age,
+     * gender different form 'Male' or 'Female'
      * @param name the name of the person
      * @param age the age of the person
      * @param gender the gender of the person
@@ -54,8 +56,8 @@ public class Person {
      * an array of two elements (the first element is the male mean age and the second one is the
      * female mean age)
      *
-     * @param persons
-     * @return
+     * @param persons the list of persons to compute the average age from
+     * @return an array of two elements, first is the male mean age and the second one is the female mean age
      */
     public double[] averageAgePerGender(List<Person> persons){
         return null;

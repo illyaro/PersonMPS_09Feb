@@ -63,4 +63,5 @@ class PersonTest {
         assertThrows(PersonException.class, () -> new Person(name, age, otherGender),
                 "Inserted gender was: '" + otherGender + "'. Only 'Male' or 'Female' gender is accdepted");
     }
+
 }
