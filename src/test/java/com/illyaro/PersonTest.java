@@ -86,6 +86,24 @@ class PersonTest {
     }
 
     @Test
+    void EmptyGenderResultsException(){
+        String name = "Robin";
+        int age = 12;
+        String gender = "";
+        assertThrows(PersonException.class, () -> new Person(name, age, gender),
+                "Inserted gender was: '" + gender + "'. Only 'Male' or 'Female' gender is accdepted");
+    }
+
+    @Test
+    void NullGenderResultsException(){
+        String name = "Robin";
+        int age = 12;
+        String gender = null;
+        assertThrows(PersonException.class, () -> new Person(name,age, gender),
+                "Persons gender cannot be null");
+    }
+
+    @Test
     void NullPersonsListResultsException() {
         List<Person> persons = null;
         assertThrows(PersonException.class, () -> testPerson.averageAgePerGender(persons),
