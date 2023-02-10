@@ -32,6 +32,9 @@ public class Person {
         if(age < 0) {
             throw new PersonException("Persons age cannot be negative");
         }
+        if (gender == null){
+            throw new PersonException("Persons gender cannot be null");
+        }
         if( !(gender.equals("Male") || gender.equals("Female")) ){
             throw new PersonException("Inserted gender was: '" + gender + "'. Only 'Male' or 'Female' gender is accepted");
         }
