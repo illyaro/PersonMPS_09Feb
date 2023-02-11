@@ -29,8 +29,8 @@ public class Person {
         if(name.isEmpty()) {
             throw new PersonException("Persons name cannot be empty");
         }
-        if(age < 0) {
-            throw new PersonException("Persons age cannot be negative");
+        if(age < 0 || age > 150){
+            throw new PersonException("Persons age must be within 0 and 150 years");
         }
         if (gender == null){
             throw new PersonException("Persons gender cannot be null");
