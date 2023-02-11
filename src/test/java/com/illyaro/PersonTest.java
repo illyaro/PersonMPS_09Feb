@@ -57,7 +57,7 @@ class PersonTest {
     @Test
     void PersonAgeCannotExceed150Years(){
         String name = "Laila";
-        int age = 150;
+        int age = 151;
         String gender = "Female";
         assertThrows(PersonException.class, () -> new Person(name, age, gender),
                 "Persons age must be within 0 and 150 years");
